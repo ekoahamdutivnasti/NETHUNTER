@@ -7,7 +7,7 @@ print("HI THIS IS EKOAHAMDUTIVNASTI MAI KARLETA HU NETHUNTER INSTALL TU CHILL KA
 # Define the commands to be executed
 commands = [
     "pkg update -y",
-    "pkg install python -y",  # Install Python in Termux
+
     "pkg install wget curl proot git -y",
     "wget -O install-nethunter-termux https://offs.ec/2MceZWr",
     "chmod +x install-nethunter-termux",
