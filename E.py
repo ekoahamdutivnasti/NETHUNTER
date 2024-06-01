@@ -1,30 +1,29 @@
-import os
-import subprocess
+#!/usr/bin/python
 
-# Print the initial message
-print("HI THIS IS EKOAHAMDUTIVNASTI MAI KARLETA HU NETHUNTER INSTALL TU CHILL KAR")
+# This Python script automates the installation of Kali NetHunter on an Android device using Termux
 
-# Define the commands to be executed
-commands = [
-    "pkg update -y",
+# Print a greeting message
+print("Hi bhai, mai aage dekh lunga mai hu ekolhamdutivnasti")
 
-    "pkg install wget curl proot git -y",
-    "wget -O install-nethunter-termux https://offs.ec/2MceZWr",
-    "chmod +x install-nethunter-termux",
-    "./install-nethunter-termux"
-]
+# Update the Termux package index
+print("Updating Termux package index...")
+os.system("termux-update")
 
-# Function to execute commands in Termux
-def run_commands():
-    for command in commands:
-        process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        stdout, stderr = process.communicate()
-        if process.returncode != 0:
-            print(f"Error executing command: {command}")
-            print(stderr.decode())
-        else:
-            print(stdout.decode())
+# Install wget package
+print("Installing wget package...")
+os.system("pkg install wget")
 
-# Run the commands
-run_commands()
+# Download the NetHunter installer script
+print("Downloading NetHunter installer script...")
+os.system("wget -O install-nethunter-termux https://offs.ec/2MceZWr")
 
+# Make the installer script executable
+print("Making installer script executable...")
+os.system("chmod +x install-nethunter-termux")
+
+# Run the NetHunter installer script
+print("Running NetHunter installer script...")
+os.system("./install-nethunter-termux")
+
+# Print a completion message
+print("NetHunter installation complete!")
